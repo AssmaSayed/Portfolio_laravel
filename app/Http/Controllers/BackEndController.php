@@ -28,7 +28,18 @@ class BackEndController extends Controller
         $dbService = Service::all();
         $dbPortfolio = Portfolio::all();
         $dbFaq = Faq::all();
-        $dbContact = Contact::all();
-        return view('backEnd', compact('dbTitre', 'dbTitreAbout', 'dbInfoAbout','dbHeader','dbNavbar','dbEndFutur','dbCta','dbService','dbPortfolio','dbFaq','dbContact'));
+        // $dbContact = Contact::all();
+        return view('backEnd', compact('dbTitre', 'dbTitreAbout', 'dbInfoAbout','dbHeader','dbNavbar','dbEndFutur','dbCta','dbService','dbPortfolio','dbFaq'));
     }
+    public function destroy($id){
+        $destroy = Navbar::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+    public function edit($id){
+        $edit = Navbar::find($id);
+        return view('editBackOffice', compact('edit'));
+    }
+
 }

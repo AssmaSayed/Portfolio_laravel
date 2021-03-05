@@ -29,7 +29,8 @@ class FrontEndController extends Controller
         $dbService = Service::all();
         $dbPortfolio = Portfolio::all();
         $dbFaq = Faq::all();
-        $dbContact = Contact::all();
-        return view('welcome', compact('dbTitre', 'dbTitreAbout', 'dbInfoAbout','dbHeader','dbNavbar','dbEndFutur','dbCta','dbService','dbPortfolio','dbFaq','dbContact'));
+        // $dbContact = Contact::all();
+        return view('welcome', compact('dbTitre', 'dbTitreAbout', 'dbInfoAbout','dbHeader','dbNavbar','dbEndFutur','dbCta','dbService','dbPortfolio','dbFaq',));
     }
+    
 }

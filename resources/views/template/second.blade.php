@@ -36,9 +36,7 @@
 </head>
 
 <body>
-    @include('partials/backEnd/navbarTwo')
-    @include('partials.backEnd.table')
-    @include('partials/backEnd/FooterTwo')
+        @yield('content')
 
 
     
