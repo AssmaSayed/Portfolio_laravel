@@ -31,15 +31,82 @@ class BackEndController extends Controller
         // $dbContact = Contact::all();
         return view('backEnd', compact('dbTitre', 'dbTitreAbout', 'dbInfoAbout','dbHeader','dbNavbar','dbEndFutur','dbCta','dbService','dbPortfolio','dbFaq'));
     }
-    public function destroy($id){
+    public function destroyHeader($id){
+        $destroy = Header::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+    public function destroyNav($id){
         $destroy = Navbar::find($id);
         $destroy->delete();
         return redirect()->back();
 
     }
-    public function edit($id){
-        $edit = Navbar::find($id);
-        return view('editBackOffice', compact('edit'));
+    public function destroyTitre($id){
+        $destroy = Titre::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+
+    public function destroyTitreAbout($id){
+        $destroy = AboutTitre::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+    public function destroyAboutInfo($id){
+        $destroy = AboutInfo::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+    public function destroyEndFutur($id){
+        $destroy = endFutur::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+    public function destroyCta($id){
+        $destroy = Cta::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+    public function destroyService($id){
+        $destroy = Service::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+    public function destroyPortfolio($id){
+        $destroy = Portfolio::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+    public function destroyFaq($id){
+        $destroy = Faq::find($id);
+        $destroy->delete();
+        return redirect()->back();
+
+    }
+
+    //EDIT // UPDATE    
+
+    public function editHeader($id){
+        $edit = Header::find($id);
+        return view('pages/edit/editHeader', compact('edit'));
+    }
+
+    public function updateHeader(Request $request,$id){
+        $update = Header::find($id);
+        $update->titre = $request->titre;
+        $update->sousTitre = $request->sousTitre;
+        $update->button = $request->button;
+        $update->save();
+        return redirect('/');
     }
 
 }

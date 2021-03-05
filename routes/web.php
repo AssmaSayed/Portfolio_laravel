@@ -22,18 +22,25 @@ Route::get('/backEnd',[BackEndController::class, 'index']);
 
 
 // DELETE
-Route::post('delete-header{id}', [BackEndController::class, 'destroy']);
-Route::post('delete-nav/{id}',[BackEndController::class, 'destroy']);
-Route::post('delete-titreAbout/{id}',[BackEndController::class, 'destroy']);
-Route::post('delete-aboutInfo/{id}',[BackEndController::class, 'destroy']);
-Route::post('delete-endFutur/{id}',[BackEndController::class, 'destroy']);
-Route::post('delete-cta/{id}',[BackEndController::class, 'destroy']);
-Route::post('delete-service/{id}',[BackEndController::class, 'destroy']);
-Route::post('delete-portfolio/{id}',[BackEndController::class, 'destroy']);
-Route::post('delete-faq/{id}', [BackEndController::class, 'destroy']);
-
+Route::post('delete-header{id}', [BackEndController::class, 'destroyHeader']);
+Route::post('delete-nav/{id}',[BackEndController::class, 'destroyNav']);
+Route::post('delete-titreAbout/{id}',[BackEndController::class, 'destroyTitreAbout']);
+Route::post('delete-aboutInfo/{id}',[BackEndController::class, 'destroyAboutInfo']);
+Route::post('delete-endFutur/{id}',[BackEndController::class, 'destroyEndFutur']);
+Route::post('delete-cta/{id}',[BackEndController::class, 'destroyCta']);
+Route::post('delete-service/{id}',[BackEndController::class, 'destroyService']);
+Route::post('delete-portfolio/{id}',[BackEndController::class, 'destroyPortfolio']);
+Route::post('delete-faq/{id}', [BackEndController::class, 'destroyFaq']);
+Route::post('delete-titre/{id}', [BackEndController::class, 'destroyTitre']);
 // EDIT
-Route::get('edit-nav/{id}',[BackEndController::class, 'edit']);
+Route::get('edit-header/{id}',[BackEndController::class, 'editHeader']);
+
+//UPDATE
+Route::post('update-header/{id}', [BackEndController::class, 'updateHeader']);
+
+// Route::post('users/{id}', function ($id) {
+    
+// });
 
 
 // Route::post('delete-titre/{id}',[BackEndController::class, 'destroy']);

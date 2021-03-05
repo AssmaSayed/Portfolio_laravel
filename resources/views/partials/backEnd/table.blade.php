@@ -27,6 +27,11 @@
 
                     </form>
                 </td>
+                <td>
+  
+                  <a class="btn btn-danger" href="/edit-header/{{$item->id}}">EDIT</a>
+
+                </td>
             </tr>
         @endforeach
     </tbody>
